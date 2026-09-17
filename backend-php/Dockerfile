@@ -16,6 +16,7 @@ COPY --from=dependencies /app/vendor ./vendor
 COPY src ./src
 COPY public ./public
 COPY composer.json ./composer.json
+COPY ca.pem ./public/ca.pem
 
 EXPOSE 8080
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public", "public/index.php"]
